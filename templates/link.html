@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            font-family: sans-serif;
+            font-weight: bold;
+
+        }
+        body{
+            background-color: #a18cd1;
+              /* background-image: linear-gradient(0deg, #FAACA8 0%, #DDD6F3 100%); */
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .block{
+            margin: 2% 0 0 40%;
+
+        }
+        .pic img{
+            width: 270px;
+            height:270px;
+            outline: 2%;
+            border: 3px solid;
+            border-color: black;
+            border-radius: 45px;
+        }
+        .details{
+            margin: 3% 0 0 -8%;
+            /* background-color: black; */
+            width: 50%;
+            text-align: center;
+        }
+        label{
+            padding: 0 0 0 10px;
+            font-size: 23px;
+            color: white
+            
+        }
+
+        .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 20px; 
+  height: 20px;
+  border-radius: 100%; 
+}
+
+.title{
+    color: white;
+    /* margin-top: 5%; */
+    /* position: absolute; */
+    text-align: center;
+} 
+
+h3{
+    /* margin-top: 5%; */
+    padding-top: 1%;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+
+.nav{
+    background-color: black;
+    width: 100%;
+    height: 50px;
+}
+    </style>
+</head>
+<body>
+    <div class="nav">
+       <div class="title"> <h3>Here is your Personalized Suggestion From Ecom that Fits Your Unique Preference</h3></div>
+    </div>
+    <div class="block">
+        <div class="pic">
+            <img src="{{ url_for('static',filename=path_pic)}}" alt="">
+        </div>
+        <div class="details">
+            <label for=""><h4><b>Prize: </b>₹{{value}}</h4></label>
+            <label for=""><h4><b>Product: </b>{{pro_name}}</h4></label>
+            <label for=""><h4><b>Size: </b> Free Size</h4></label>
+            <label for=""><h4><b>Available color </b> </h4><button class="button"></button>
+                <button class="button button2"></button>
+                <button class="button button3"></button>
+                <button class="button button4"></button>
+                <button class="button button5"></button></label><br>
+            <label for=""><h4><b>Lauch date: </b> 12/01/2023</h4></label>
+
+        </div>
+    </div>
+</body>
+</html>

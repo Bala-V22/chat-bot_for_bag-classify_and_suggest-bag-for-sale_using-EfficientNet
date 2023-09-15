@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+            margin: 0%;
+            padding: 0%;
+            font-family: sans-serif;
+            font-weight: bold;
+
+        }
+
+body{
+    background-image: radial-gradient(circle, #c8d6e5, #aecfe8, #8ec8e9, #64c3e7, #0abde3);
+}        
+.suggest img{
+    width: 200px;
+    height: 200px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.suggest label{
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.model label{
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.price{
+position: absolute;
+left: 30%;
+top: 20%;
+}
+
+.btn button{
+width: 150px;
+height: 40px;
+font-size: medium;
+margin: 10px;
+border-radius: 10px;
+/* border: none; */
+transition: 0.5s ease-in-out;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40%;
+}
+
+.model img{
+    width: 150px;
+    height: 150px;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.model{
+position: absolute;
+top: 10%;
+left: 75%;
+}
+
+.contain{
+    display: flex;
+    flex-direction: column;
+}
+
+button:hover{
+    background-color: #B33771;
+    color: white;
+    transform: scale(115%);
+    transform: scale3d(115%);
+    border: none;
+}
+
+button:focus{
+    background-color: #B33771;
+    color: white;
+    transform: scale(115%);
+    transform: scale3d(115%);
+    border: none;
+    border-color:dodgerBlue;
+    box-shadow:0 0 8px 0 dodgerBlue;
+}
+
+    </style>
+</head>
+<body>
+   
+    <div class="contain">
+        <div class="suggest">
+            <img src="{{ url_for('static',filename=sug)}}" alt=""><br>
+            <label for=""><b>{{product_name}}</b></label>
+        </div>
+        <div class="price">
+            <label for=""><h2>prize</h2><h1> ₹{{prize}}</h1></label>
+            <b>Product Name</b>: {{product_name}}
+        </div>
+
+        <div>
+            <div class="btn">
+                <form action="billing" method="post">
+                    <button type="submit"><b>Buy</b></button>
+                </form>
+                <form action="choose" method="post">    
+                    <button type="submit"><b>Choose another</b></button>
+                </form>
+                <form action="cancel" method="post">    
+                    <button type="submit"><b>Not Now</b></button>
+                </form>    
+            </div>
+        </div>
+        <div class="pic">
+            <div class="model">
+            <img src="{{ url_for('static',filename=s_file)}}" alt=""><br>
+            <label for=""><b>Your Input Image</b></label>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
